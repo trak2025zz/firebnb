@@ -1,0 +1,433 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "firebnb",
+    "collectionId": "34becd9f-66d1-4013-a175-373079bcdebc",
+    "dateExported": "2024-11-07T16:40:01.876Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "d79b5319-dde7-49ef-a5cc-6bf207df98ec",
+            "name": "user",
+            "containerId": "",
+            "created": "2024-09-27T16:41:18.410Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2bbfa119-b407-46a4-8f82-7e3dbe9d86f4",
+            "name": "auth",
+            "containerId": "",
+            "created": "2024-09-27T16:41:18.412Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "bnb",
+            "containerId": "",
+            "created": "2024-09-27T16:41:18.413Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "reservations",
+            "containerId": "",
+            "created": "2024-09-27T16:41:18.414Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "1e535f3d-921e-4c38-9d9b-4664f4908978",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "d79b5319-dde7-49ef-a5cc-6bf207df98ec",
+            "name": "createUser",
+            "url": "{{API_URL}}/api/user/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-09-27T16:41:18.411Z",
+            "modified": "2024-09-29T11:46:02.150Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"full_name\": \"Testowy użytkownik\",\n    \"password\": \"user12345!\",\n    \"email\": \"test5@user.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "936af2f8-fd8d-4278-98e5-2c41997e1ff8",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "d79b5319-dde7-49ef-a5cc-6bf207df98ec",
+            "name": "updateUser",
+            "url": "{{API_URL}}/api/user/update",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-09-27T16:41:18.412Z",
+            "modified": "2024-09-29T11:47:01.327Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"full_name\": \"test_user\",\n    \"password\": \"user12345!\",\n    \"email\": \"test55@email.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "b259d64d-2cd6-42a8-9c2f-6879fc4f4a06",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "d79b5319-dde7-49ef-a5cc-6bf207df98ec",
+            "name": "deleteUser",
+            "url": "{{API_URL}}/api/user/delete",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-09-27T16:41:18.413Z",
+            "modified": "2024-09-29T11:47:55.256Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"test55@email.com\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "ea311aa9-f908-4714-aeff-e68b6c55a9d0",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "2bbfa119-b407-46a4-8f82-7e3dbe9d86f4",
+            "name": "login",
+            "url": "{{API_URL}}/api/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-09-27T16:41:18.414Z",
+            "modified": "2024-11-07T16:38:13.729Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"wp@wp.pl\",\n    \"password\": \"qwerty1!\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b71e6d87-60e1-40fe-ac97-900ae061c717",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "2bbfa119-b407-46a4-8f82-7e3dbe9d86f4",
+            "name": "getUser",
+            "url": "{{API_URL}}/api/auth/me",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-09-27T16:41:18.415Z",
+            "modified": "2024-09-27T16:41:18.415Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "a86710b3-690f-4405-b786-e2a1e7bb1c95",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "getBnbById",
+            "url": "{{API_URL}}/api/bnb/index/6609d5ab7444dd5da80bd413",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-09-27T16:41:18.416Z",
+            "modified": "2024-09-27T16:41:18.416Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        },
+        {
+            "_id": "d5120fa1-e9cd-4d6a-8af6-971ddc7af5ba",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "updateBnb",
+            "url": "{{API_URL}}/api/bnb/update",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-09-27T16:41:18.417Z",
+            "modified": "2024-09-27T16:41:18.417Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"6609d2337444dd5da80bd3fd\",\r\n    \"space\": \"10\",\r\n    \"cost\": \"40\",\r\n    \"address\": \"Ulica 123, 30-040 Rzeszów\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "90c9fa17-f851-459f-a855-4a1ea454a711",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "createBnb",
+            "url": "{{API_URL}}/api/bnb/create",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-09-27T16:41:18.418Z",
+            "modified": "2024-09-27T16:41:18.418Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"space\": \"20\",\r\n    \"cost\": \"40\",\r\n    \"address\": \"Ulica 123, 30-040 Rzeszów\",\r\n    \"user_id\": 1\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "7bfc5a70-f5fe-4dce-adf7-848041f45598",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "getBnbs",
+            "url": "{{API_URL}}/api/bnb/list",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-09-27T16:41:18.419Z",
+            "modified": "2024-09-27T16:41:18.419Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "min_cost",
+                    "value": "0",
+                    "isDisabled": true
+                },
+                {
+                    "name": "max_cost",
+                    "value": "100",
+                    "isDisabled": true
+                },
+                {
+                    "name": "min_space",
+                    "value": "0",
+                    "isDisabled": true
+                },
+                {
+                    "name": "max_space",
+                    "value": "100",
+                    "isDisabled": true
+                },
+                {
+                    "name": "address_like",
+                    "value": "Ulica",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "preReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "postReq": {
+                "inlineScripts": []
+            }
+        },
+        {
+            "_id": "a6cc5660-203b-4bb1-8827-7d421fd4562e",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "bedd4201-4b7b-45a7-b5a1-037247bc6106",
+            "name": "deleteBnb",
+            "url": "{{API_URL}}/api/bnb/delete/6609d2337444dd5da80bd3fd",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-09-27T16:41:18.420Z",
+            "modified": "2024-09-27T16:41:18.420Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "dfca5101-8d7f-4269-9004-96d4b706ec1c",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "createReservation",
+            "url": "{{API_URL}}/api/reservation/create",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-09-27T16:41:18.421Z",
+            "modified": "2024-09-27T16:41:18.421Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"start_date\": \"2024-05-16\",\r\n    \"end_date\": \"2024-05-17\",\r\n    \"bnb_id\": \"6609d5ab7444dd5da80bd413\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "20a7165d-535b-4798-b674-85674a744024",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "updateReservation",
+            "url": "{{API_URL}}/api/reservation/update",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2024-09-27T16:41:18.422Z",
+            "modified": "2024-09-27T16:41:18.422Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"id\": \"6609d5ab7444dd5da80bd413\",\r\n    \"start_date\": \"2024-05-01\",\r\n    \"end_date\": \"2024-05-07\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "35cb88d4-9571-42c4-89f3-01722b575471",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "getReservationById",
+            "url": "{{API_URL}}/api/reservation/index/1",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-09-27T16:41:18.423Z",
+            "modified": "2024-09-27T16:41:18.423Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        },
+        {
+            "_id": "a457166d-8622-466b-826d-47ae510554f1",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "deleteReservation",
+            "url": "{{API_URL}}/api/reservation/delete/1",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2024-09-27T16:41:18.424Z",
+            "modified": "2024-09-27T16:41:18.424Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt_token}}"
+            }
+        },
+        {
+            "_id": "1b5b2426-7aa2-463d-85d9-df12d44ce81d",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "getReservations",
+            "url": "{{API_URL}}/api/reservation/list?bnb_id=6609d5ab7444dd5da80bd413",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-09-27T16:41:18.425Z",
+            "modified": "2024-09-27T16:41:18.425Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "start_date",
+                    "value": "100",
+                    "isDisabled": true
+                },
+                {
+                    "name": "end_date",
+                    "value": "0",
+                    "isDisabled": true
+                },
+                {
+                    "name": "bnb_id",
+                    "value": "6609d5ab7444dd5da80bd413"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        },
+        {
+            "_id": "b3020ff3-488a-4089-a447-45311fadb349",
+            "colId": "34becd9f-66d1-4013-a175-373079bcdebc",
+            "containerId": "267cb902-b513-45f2-99b2-72fc6071aacd",
+            "name": "getUserReservations",
+            "url": "{{API_URL}}/api/reservation/list/user",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-09-27T16:41:18.426Z",
+            "modified": "2024-09-27T16:41:18.426Z",
+            "headers": [
+                {
+                    "name": "",
+                    "value": "",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Authorization",
+                    "value": "Baerer {{jwt_token}}"
+                }
+            ],
+            "params": [
+                {
+                    "name": "start_date",
+                    "value": "100",
+                    "isDisabled": true
+                },
+                {
+                    "name": "end_date",
+                    "value": "0",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        }
+    ],
+    "settings": {
+        "preReq": {
+            "inlineScripts": [
+                {
+                    "script": [
+                        ""
+                    ]
+                }
+            ]
+        },
+        "postReq": {
+            "inlineScripts": [
+                {
+                    "script": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    },
+    "ref": "V1_yj5GPOaz_fpwjyeO35sUb482UMYdKGYxiPw_OYIWAvln2CesGsHIsrDm7ZVm61gyFxHsRiatpchBPJ99z_w"
+}
