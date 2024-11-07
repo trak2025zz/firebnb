@@ -1,0 +1,11 @@
+{
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  },
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

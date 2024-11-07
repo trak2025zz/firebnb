@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.rdrDefinedRangesWrapper {
+  display: none;
+}
+
+.rdrDayToday .rdrDayNumber span:after {
+  background: #ff5a5f;
+}

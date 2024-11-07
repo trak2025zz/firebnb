@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@firebnb/public": ["public/index.ts"]
+    },
+    "typeRoots": ["libs/shared", "node_modules/@types"],
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

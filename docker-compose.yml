@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  mysql:
+    restart: always
+    image: mariadb:10.9-jammy
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'
+      MYSQL_DATABASE: firebnb
+      MYSQL_USER: firebnb
+      MYSQL_PASSWORD: '123456'
+    ports:
+      - '3306:3306'
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./mariadb/migrations
+        target: /docker-entrypoint-initdb.d
+
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+      MONGO_INITDB_DATABASE: firebnb
+    volumes:
+      - type: volume
+        source: mongodb_data
+        target: /data/db
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./mongodb
+        target: /docker-entrypoint-initdb.d
+
+  express:
+    build:
+      context: ./api/express
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongodb
+      - mysql
+      
+  react-app:
+    build:
+      context: .
+      dockerfile: client/react/Dockerfile
+    volumes:
+      - ./public:/public
+    ports:
+      - 5173:5173
+
+  vue-app:
+    build:
+      context: .
+      dockerfile: client/vue/Dockerfile
+    volumes:
+      - ./public:/public
+    ports:
+      - 5174:5174
+
+volumes:
+  mysql_data:
+    driver: local
+  mongodb_data:
+    driver: local
+
+networks:
+  sail:
+    driver: bridge
